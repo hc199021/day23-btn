@@ -23,7 +23,7 @@ public class UserController {
 	
 	@RequestMapping(value="/toindex",method=RequestMethod.GET)
 	public String toindex(){
-		
+		System.out.print("嘿嘿");
 		return "index";
 	}
 	
@@ -60,5 +60,18 @@ public class UserController {
 	public void updateuser(User user) throws Exception{
 		
 		ius.updateUser(user);
+	}
+
+	@RequestMapping(value="/delmore",method=RequestMethod.POST)
+	public void delmore(Integer[] ids) throws Exception{
+
+
+		System.out.println("----------------");
+		System.out.println("ids");
+		System.out.println("----------------");
+
+
+		ius.delmore(ids);
+
 	}
 }
